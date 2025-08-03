@@ -1,3 +1,10 @@
+import {
+  FaTwitter,
+  FaLinkedinIn,
+  FaGithub,
+  FaDiscord,
+} from "react-icons/fa"
+
 const Footer = () => {
   const footerLinks = {
     product: [
@@ -19,10 +26,10 @@ const Footer = () => {
       { name: "GDPR", href: "#" },
     ],
     social: [
-      { name: "Twitter", href: "#", icon: "🐦" },
-      { name: "LinkedIn", href: "#", icon: "💼" },
-      { name: "GitHub", href: "#", icon: "🐙" },
-      { name: "Discord", href: "#", icon: "💬" },
+      { name: "Twitter", href: "#", icon: FaTwitter },
+      { name: "LinkedIn", href: "#", icon: FaLinkedinIn },
+      { name: "GitHub", href: "#", icon: FaGithub },
+      { name: "Discord", href: "#", icon: FaDiscord },
     ],
   }
 
@@ -47,7 +54,7 @@ const Footer = () => {
                   className="w-10 h-10 bg-gray-800 border border-gray-700 rounded-lg flex items-center justify-center hover:border-cyan-500 hover:bg-gray-700 transition-all duration-300"
                   title={social.name}
                 >
-                  <span className="text-lg">{social.icon}</span>
+                  <social.icon className="w-5 h-5 text-gray-400 hover:text-cyan-400 transition-colors duration-300" />
                 </a>
               ))}
             </div>
@@ -100,7 +107,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-center md:text-left">
-              © 2024 JustCV by <span className="text-cyan-400 font-semibold">ChokroByte</span>. All rights reserved.
+              © 2024 JustCV by <span className="text-cyan-400 font-semibold">BarbarianKing</span>. All rights reserved.
             </p>
             <div className="flex items-center gap-4 text-sm text-gray-500">
               <span>Made with ❤️ for job seekers</span>

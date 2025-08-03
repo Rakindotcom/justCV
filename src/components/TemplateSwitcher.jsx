@@ -1,5 +1,3 @@
-"use client"
-
 const TemplateSwitcher = ({ selectedTemplate, onTemplateChange }) => {
   const templates = [
     {

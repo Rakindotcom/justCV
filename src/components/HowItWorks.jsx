@@ -5,21 +5,20 @@ const HowItWorks = () => {
       title: "Fill Your Information",
       description:
         "Enter your personal details, work experience, education, and skills in our intuitive dark-themed form.",
-      icon: "📝",
+
       gradient: "from-cyan-500 to-blue-500",
     },
     {
       number: "02",
       title: "Preview & Customize",
       description: "Watch your CV come to life with our professional dark templates. Switch between designs instantly.",
-      icon: "👁️",
+
       gradient: "from-blue-500 to-purple-500",
     },
     {
       number: "03",
       title: "Download & Apply",
       description: "Export your CV as a high-quality PDF and start applying for your dream job immediately.",
-      icon: "⬇️",
       gradient: "from-purple-500 to-pink-500",
     },
   ]
@@ -45,18 +44,14 @@ const HowItWorks = () => {
                   {step.number}
                 </div>
 
-                {/* Icon */}
-                <div className="text-6xl mb-6">{step.icon}</div>
+
 
                 {/* Content */}
                 <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{step.description}</p>
               </div>
 
-              {/* Connection Line */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-px bg-gradient-to-r from-gray-600 to-transparent transform -translate-y-1/2 z-10"></div>
-              )}
+
             </div>
           ))}
         </div>

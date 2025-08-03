@@ -1,5 +1,3 @@
-"use client"
-
 const SummaryForm = ({ data, onChange }) => {
   const handleGenerateAI = () => {
     // Placeholder for AI generation

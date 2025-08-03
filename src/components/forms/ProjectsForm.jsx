@@ -1,5 +1,3 @@
-"use client"
-
 const ProjectsForm = ({ data, onChange }) => {
   const addProject = () => {
     const newProject = {

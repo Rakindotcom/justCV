@@ -1,5 +1,3 @@
-"use client"
-
 const EducationForm = ({ data, onChange }) => {
   const addEducation = () => {
     const newEducation = {

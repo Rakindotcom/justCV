@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import PersonalInfoForm from "./forms/PersonalInfoForm"
 import SummaryForm from "./forms/SummaryForm"

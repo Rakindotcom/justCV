@@ -1,5 +1,3 @@
-"use client"
-
 import Template1 from "../templates/Template1"
 import Template2 from "../templates/Template2"
 import { generatePDF } from "../utils/pdfGenerator"
