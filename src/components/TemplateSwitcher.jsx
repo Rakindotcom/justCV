@@ -12,15 +12,18 @@ const TemplateSwitcher = ({ selectedTemplate, onTemplateChange }) => {
       description: "Professional sidebar layout",
       gradient: "from-gray-600 to-gray-800",
     },
-  ]
+  ];
 
   return (
-    <div className="relative">
-      <label className="block text-sm font-medium text-gray-300 mb-2">Template Style</label>
+    <div className="flex flex-wrap items-center gap-2 text-white">
+      <label htmlFor="template-select" className="text-sm font-medium">
+        Template Style:
+      </label>
       <select
+        id="template-select"
         value={selectedTemplate}
         onChange={(e) => onTemplateChange(e.target.value)}
-        className="px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 font-medium"
+        className="min-w-[180px] px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 font-medium"
       >
         {templates.map((template) => (
           <option key={template.id} value={template.id}>
@@ -29,7 +32,7 @@ const TemplateSwitcher = ({ selectedTemplate, onTemplateChange }) => {
         ))}
       </select>
     </div>
-  )
-}
+  );
+};
 
-export default TemplateSwitcher
+export default TemplateSwitcher;

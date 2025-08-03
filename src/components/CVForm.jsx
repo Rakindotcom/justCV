@@ -79,14 +79,14 @@ const CVForm = ({ cvData, onDataChange }) => {
       </div>
 
       {/* Active Section Header */}
-      <div className={`mb-6 p-4 rounded-xl bg-gradient-to-r ${activeColor} bg-opacity-10 border border-gray-700`}>
+      <div className={`mb-4 p-4 rounded-xl bg-gradient-to-r ${activeColor} bg-opacity-10 border border-gray-700`}>
         <div className="flex items-center gap-3">
           <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${activeColor} flex items-center justify-center`}>
             <span className="text-white text-lg">{sections.find((s) => s.id === activeSection)?.icon}</span>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-white">{sections.find((s) => s.id === activeSection)?.label}</h3>
-            <p className="text-gray-400 text-sm">
+            <h3 className="text-lg font-bold text-white">{sections.find((s) => s.id === activeSection)?.label}</h3>
+            <p className="text-white text-sm">
               {activeSection === "personal" && "Your basic contact information"}
               {activeSection === "summary" && "A brief overview of your professional background"}
               {activeSection === "experience" && "Your work history and achievements"}
@@ -99,8 +99,10 @@ const CVForm = ({ cvData, onDataChange }) => {
         </div>
       </div>
 
-      {/* Active Form */}
-      <div className="max-h-96 overflow-y-auto custom-scrollbar">{renderActiveForm()}</div>
+      {/* Active Form with right padding to avoid scrollbar collision */}
+      <div className="max-h-96 overflow-y-auto custom-scrollbar pb-6 pr-6">
+        {renderActiveForm()}
+      </div>
     </div>
   )
 }

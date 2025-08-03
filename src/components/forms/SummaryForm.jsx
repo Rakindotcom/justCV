@@ -1,11 +1,28 @@
+import { useState, useEffect } from "react"
+
 const SummaryForm = ({ data, onChange }) => {
+  const [showPopup, setShowPopup] = useState(false)
+
   const handleGenerateAI = () => {
-    // Placeholder for AI generation
-    alert("🤖 AI Summary generation coming soon! For now, please write your summary manually.")
+    setShowPopup(true)
   }
 
+  useEffect(() => {
+    if (showPopup) {
+      const timer = setTimeout(() => setShowPopup(false), 3000)
+      return () => clearTimeout(timer)
+    }
+  }, [showPopup])
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 relative">
+      {/* Popup */}
+      {showPopup && (
+        <div className="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-cyan-600 text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in-out pointer-events-none">
+          🤖 AI Summary generation coming soon! For now, please write your summary manually.
+        </div>
+      )}
+
       <div className="space-y-2">
         <label className="flex items-center gap-2 text-sm font-medium text-gray-300">
           <span>📄</span>
@@ -49,6 +66,18 @@ const SummaryForm = ({ data, onChange }) => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fade-in-out {
+          0% { opacity: 0; transform: translateY(-10px); }
+          10% { opacity: 1; transform: translateY(0); }
+          90% { opacity: 1; transform: translateY(0); }
+          100% { opacity: 0; transform: translateY(-10px); }
+        }
+        .animate-fade-in-out {
+          animation: fade-in-out 3s ease forwards;
+        }
+      `}</style>
     </div>
   )
 }
